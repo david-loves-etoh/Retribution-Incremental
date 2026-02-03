@@ -23,19 +23,7 @@ addLayer("SideTab", {
     startData() { return {
         unlocked: true,
         points: new Decimal(0),
-    }},
-    small: true,
-    color: "#fefefe",
-    type: "none",
-    tooltip(){return false},
-    layerShown(){return layerDisplayTotal(['Setting','Statistics','Information','Changelog'])},
-    tabFormat: [
-        ["display-text", function() { return getPointsDisplay() }],
-    ],
-})
-
-addLayer("Setting", {
-    name: "Setting",
+    g",
     position: -998,
     row: 0,
     symbol() {return i18n('设置', 'Setting', false)},
@@ -44,23 +32,14 @@ addLayer("Setting", {
         points: new Decimal(0),
     }},
     color: "rgb(230, 230, 236)",
+    type: "none",}},
+    small: true,
+    color: "#fefefe",
     type: "none",
-    tooltip(){return false},
-    tabFormat: [
-        ["display-text", function() { return getPointsDisplay() }],
-    ],
-})
-
-addLayer("Information", {
-    name: "Information",
-    position: -997,
-    row: 0,
-    symbol() {return i18n('信息', 'Information', false)},
-    startData() { return {
-        unlocked: true,
-        points: new Decimal(0),
-    }},
-    color: "rgb(230, 230, 236)",
+    
+addLayer("Setting", {
+    name: "Settin
+    tooltip  color: "rgb(230, 230, 236)",
     type: "none",
     tooltip(){return false},
     tabFormat: [
@@ -74,7 +53,28 @@ addLayer("Changelog", {
     row: 0,
     symbol() {return i18n('更新日志', 'Changelog', false)},
     startData() { return {
-        unlocked: true,
+        unlocked: true,(){return false},
+    tabFormat: [
+        ["display-text", function() { return getPointsDisplay() }],
+    ],
+})
+
+addLayer("Information", {
+    name: "Information",
+    position: -997,
+    row: 0,
+    symbol() {return i18n('信息', 'Information', false)},
+    startData() { return {
+        unlockedtooltip(){return false},
+    layerShown(){return layerDisplayTotal(['Setting','Statistics','Information','Changelog'])},
+    tabFormat: [
+        ["display-text", function() { return getPointsDisplay() }],
+    ],
+})
+: true,
+        points: new Decimal(0),
+    }},
+  
         points: new Decimal(0),
     }},
     color: "rgb(230, 230, 236)",

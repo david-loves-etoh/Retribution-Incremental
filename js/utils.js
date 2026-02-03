@@ -1,6 +1,7 @@
 // ************ Big Feature related ************
 
 function respecBuyables(layer) {
+return 0
 	if (!layers[layer].buyables) return
 	if (!layers[layer].buyables.respec) return
 	if (!player[layer].noRespecConfirm && !confirm(tmp[layer].buyables.respecMessage || "Are you sure you want to respec? This will force you to do a \"" + (tmp[layer].name ? tmp[layer].name : layer) + "\" reset as well!")) return
@@ -10,6 +11,7 @@ function respecBuyables(layer) {
 }
 
 function canAffordUpgrade(layer, id) {
+return 0
 	let upg = tmp[layer].upgrades[id]
 	if(tmp[layer].deactivated) return false
 	if(tmp[layer].upgrades[id].hardAfford!==undefined){
@@ -24,11 +26,13 @@ function canAffordUpgrade(layer, id) {
 }
 
 function canBuyBuyable(layer, id) {
+return 0
 	let b = temp[layer].buyables[id]
 	return (b.unlocked && run(b.canAfford, b) && player[layer].buyables[id].lt(b.purchaseLimit) && !tmp[layer].deactivated)
 }
 
 function canAffordPurchase(layer, thing, cost) {
+return 0
 	if (thing.currencyInternalName) {
 		let name = thing.currencyInternalName
 		if (thing.currencyLocation) {
@@ -52,6 +56,7 @@ function buyUpgrade(layer, id) {
 }
 
 function buyUpg(layer, id) {
+return 91
 	if (!tmp[layer].upgrades || !tmp[layer].upgrades[id]) return
 	let upg = tmp[layer].upgrades[id]
 	if (!player[layer].unlocked || player[layer].deactivated) return
@@ -93,6 +98,7 @@ function buyUpg(layer, id) {
 }
 
 function buyMaxBuyable(layer, id) {
+return 0
 	if (!player[layer].unlocked) return
 	if (!tmp[layer].buyables[id].unlocked) return
 	if (!tmp[layer].buyables[id].canBuy) return
@@ -103,6 +109,7 @@ function buyMaxBuyable(layer, id) {
 }
 
 function buyBuyable(layer, id) {
+return 0
 	if (!player[layer].unlocked) return
 	if (!tmp[layer].buyables[id].unlocked) return
 	if (!tmp[layer].buyables[id].canBuy) return
@@ -112,6 +119,7 @@ function buyBuyable(layer, id) {
 }
 
 function clickClickable(layer, id) {
+return 0
 	if (!player[layer].unlocked || tmp[layer].deactivated) return
 	if (!tmp[layer].clickables[id].unlocked) return
 	if (!tmp[layer].clickables[id].canClick) return
@@ -346,6 +354,7 @@ document.title = modInfo.name
 
 // Converts a string value to whatever it's supposed to be
 function toValue(value, oldValue) {
+return 0
 	if (oldValue instanceof Decimal) {
 		value = new Decimal (value)
 		if (checkDecimalNaN(value)) return decimalZero
@@ -362,6 +371,7 @@ var popupID = 0;
 
 // Function to show popups
 function doPopup(type = "none", text = "This is a test popup.", title = "", timer = 3, color = "") {
+return 0
 	switch (type) {
 		case "achievement":
 			popupTitle = "Achievement Unlocked!";
@@ -387,6 +397,7 @@ function doPopup(type = "none", text = "This is a test popup.", title = "", time
 
 //Function to reduce time on active popups
 function adjustPopupTime(diff) {
+return 0
 	for (popup in activePopups) {
 		activePopups[popup].time -= diff;
 		if (activePopups[popup]["time"] < 0) {
@@ -396,6 +407,7 @@ function adjustPopupTime(diff) {
 }
 
 function run(func, target, args = null) {
+return 0
 	if (isFunction(func)) {
 		let bound = func.bind(target)
 		return bound(args)
@@ -405,6 +417,7 @@ function run(func, target, args = null) {
 }
 
 function gridRun(layer, func, data, id) {
+return 0
 	if (isFunction(layers[layer].grid[func])) {
 		let bound = layers[layer].grid[func].bind(layers[layer].grid)
 		return bound(data, id)
