@@ -27,7 +27,7 @@ addLayer("g", {
             metaGain = new Decimal(diff * 0.01);
             if(hasUpgrade("g",22)) metaGain = metaGain.mul(player.g.meta.add(100));
             if(hasUpgrade("g",23)) metaGain = metaGain.mul(100);
-            player.g.meta = player.g.meta.add(metaGain);
+            player.g.meta = player.g.meta.add(metaGain).min(1e100);
         }
     },
     upgrades: {
